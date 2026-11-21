@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace GuilinEye.Core
 {
@@ -88,7 +89,9 @@ namespace GuilinEye.Core
     public class QualityFile
     {
         public string version, basis;
+        [NonSerialized, JsonProperty]
         public Dictionary<string, QualityTier> tiers;
+        [NonSerialized, JsonProperty]
         public Dictionary<string, int> segmentParticleCaps;
         public BrightnessConfig brightness;
         public ResponseConfig response;
@@ -185,6 +188,7 @@ namespace GuilinEye.Core
     public class SensorFile
     {
         public string version, source;
+        [NonSerialized, JsonProperty]
         public Dictionary<string, SensorCapability> capabilities;
         public ZoneConfig[] zones;
     }
@@ -200,6 +204,7 @@ namespace GuilinEye.Core
     {
         public string version, source;
         public int total;
+        [NonSerialized, JsonProperty]
         public Dictionary<string, int> perModule;
         public ArtSlotConfig[] elements;
     }
