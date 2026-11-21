@@ -1,0 +1,21 @@
+{
+  "name": "GuilinEye.Editor",
+  "rootNamespace": "GuilinEye.Editor",
+  "references": [
+    "GuilinEye.Runtime",
+    "GuilinEye.Integration",
+    "GuilinEye.Shared",
+    "Unity.Newtonsoft.Json"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

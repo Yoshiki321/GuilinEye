@@ -1,0 +1,18 @@
+{
+  "name": "GuilinEye.Integration",
+  "rootNamespace": "GuilinEye.Integration",
+  "references": [
+    "GuilinEye.Runtime",
+    "GuilinEye.Shared",
+    "Unity.Newtonsoft.Json"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

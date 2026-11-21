@@ -1,0 +1,19 @@
+{
+  "name": "com.guilineye.shared",
+  "version": "1.0.0",
+  "displayName": "GuilinEye Shared Toolkit",
+  "description": "桂林之眼 18 个展项共用插件：状态机、时间轴、交互门、画面淡化、亮度/镜面、投影校准、内容槽、原子存储、HTTP/遥测、UI 适配、对象池、诊断。",
+  "unity": "6000.3",
+  "author": {
+    "name": "GuilinEye",
+    "url": "https://guilin-eye.local"
+  },
+  "keywords": [
+    "guilin-eye",
+    "exhibition",
+    "interaction",
+    "projection",
+    "shared"
+  ],
+  "dependencies": {}
+}

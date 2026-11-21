@@ -1,0 +1,854 @@
+{
+  "version": "1.1",
+  "modules": [
+    {
+      "id": "A01",
+      "name": "石象·四时八候",
+      "area": "A",
+      "phase": 1,
+      "tier": "T1",
+      "surfaces": [
+        {
+          "canvas": "A-WALL",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 5333,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "A01-STAR",
+      "interactions": [
+        {
+          "type": "presence",
+          "sensor": "S3",
+          "zone": "S3-ENTRY",
+          "response": 0.5,
+          "cooldown": 90,
+          "action": "greet"
+        }
+      ],
+      "particlesMax": 2000,
+      "artSlotPrefix": "A01",
+      "note": "双机叠加；石象 x800—4600，鼻下弧顶 y2000"
+    },
+    {
+      "id": "A02",
+      "name": "水月洞门",
+      "area": "A",
+      "phase": 1,
+      "tier": "T1",
+      "surfaces": [
+        {
+          "canvas": "A-WALL",
+          "rect": {
+            "x": 2000,
+            "y": 0,
+            "w": 2200,
+            "h": 2000
+          },
+          "z": 20
+        }
+      ],
+      "show": "A01-STAR",
+      "interactions": [
+        {
+          "type": "constant",
+          "note": "无互动，穿门月自然落洞"
+        }
+      ],
+      "particlesMax": 0,
+      "artSlotPrefix": "A02",
+      "note": "洞口 2200×2000，中心距北缘 3100，弧线误差 ≤15mm"
+    },
+    {
+      "id": "A03",
+      "name": "古人招手",
+      "area": "A",
+      "phase": 1,
+      "tier": "T1",
+      "surfaces": [
+        {
+          "canvas": "A-WALL",
+          "rect": {
+            "x": 1500,
+            "y": 600,
+            "w": 400,
+            "h": 1500
+          },
+          "z": 11
+        }
+      ],
+      "show": "A03-LOOP",
+      "interactions": [
+        {
+          "type": "presence",
+          "sensor": "S3",
+          "zone": "S3-ENTRY",
+          "response": 0.5,
+          "interrupt": true,
+          "resumePhase": true,
+          "action": "greet"
+        }
+      ],
+      "particlesMax": 0,
+      "artSlotPrefix": "A03",
+      "note": "四段 15s / 60s 循环；墨色 23302C"
+    },
+    {
+      "id": "A04",
+      "name": "古人入卷",
+      "area": "B",
+      "phase": 1,
+      "tier": "T2",
+      "surfaces": [
+        {
+          "canvas": "B-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 4000,
+            "h": 3000
+          },
+          "z": 11
+        }
+      ],
+      "show": "A04-LOOP",
+      "interactions": [
+        {
+          "type": "point",
+          "sensor": "R1",
+          "zone": "T1",
+          "action": "a04.presence",
+          "cooldown": 180,
+          "response": 0.5,
+          "branch": "greetAt15m",
+          "note": "R1 原点 3400，A04 的 0—4000 区域只有 3400—4000 可被扫到；改由 T1 进入点触发，180s 一次"
+        }
+      ],
+      "particlesMax": 800,
+      "artSlotPrefix": "A04",
+      "note": "行经 3.2m/12s；中缝融合带不透明度 85%；每 3min 一轮"
+    },
+    {
+      "id": "B01",
+      "name": "喀斯特·时光消融",
+      "area": "B",
+      "phase": 1,
+      "tier": "T2",
+      "surfaces": [
+        {
+          "canvas": "B-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 5800,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "B01-LOOP",
+      "interactions": [
+        {
+          "type": "touch",
+          "sensor": "R1",
+          "zone": "T1",
+          "gesture": "longpress",
+          "hold": 3,
+          "action": "counter"
+        },
+        {
+          "type": "touch",
+          "sensor": "R1",
+          "zone": "T2",
+          "gesture": "sweep",
+          "action": "dissolve"
+        },
+        {
+          "type": "touch",
+          "sensor": "R1",
+          "zone": "T3",
+          "gesture": "hover",
+          "hold": 0.8,
+          "action": "moon"
+        },
+        {
+          "type": "multiTouch",
+          "zones": [
+            "T1",
+            "T2",
+            "T3"
+          ],
+          "count": 3,
+          "action": "easterEgg.future"
+        }
+      ],
+      "particlesMax": 8000,
+      "artSlotPrefix": "B01",
+      "note": "五幕 5×36s；融合带 2200—5800 只放大字"
+    },
+    {
+      "id": "B02",
+      "name": "非遗·江岸市井",
+      "area": "B",
+      "phase": 1,
+      "tier": "T2",
+      "surfaces": [
+        {
+          "canvas": "B-NORTH",
+          "rect": {
+            "x": 5800,
+            "y": 0,
+            "w": 2200,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "B-EAST",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 1200,
+            "h": 3000
+          },
+          "z": 9
+        }
+      ],
+      "show": "B02-LOOP",
+      "interactions": [
+        {
+          "type": "hotspot",
+          "sensor": "R1",
+          "zones": [
+            "T4-MIFEN",
+            "T4-GUIJU",
+            "T4-TUANSHAN",
+            "T4-YOUCHA",
+            "T4-TIANQIN"
+          ],
+          "hover": 0.8,
+          "cardHold": 6,
+          "clipSeconds": [
+            8,
+            15
+          ],
+          "secondHover": "clip"
+        }
+      ],
+      "particlesMax": 900,
+      "artSlotPrefix": "B02",
+      "note": "五热点各约 400 宽；北墙 5800—8000 独占无融合；讲解员可停任一非遗段"
+    },
+    {
+      "id": "B03",
+      "name": "摩崖石刻·笔墨官司",
+      "area": "B",
+      "phase": 1,
+      "tier": "T2",
+      "surfaces": [
+        {
+          "canvas": "B-EAST",
+          "rect": {
+            "x": 1200,
+            "y": 0,
+            "w": 3800,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "B03-STANDBY",
+      "interactions": [
+        {
+          "type": "touch",
+          "sensor": "R2",
+          "zone": "T5",
+          "action": "duel.teamA"
+        },
+        {
+          "type": "touch",
+          "sensor": "R2",
+          "zone": "T6",
+          "action": "duel.teamB"
+        },
+        {
+          "type": "touch",
+          "sensor": "R2",
+          "zone": "T7",
+          "gesture": "longpress",
+          "hold": 1.5,
+          "action": "titleStone"
+        },
+        {
+          "type": "touch",
+          "sensor": "R1",
+          "zone": "T8",
+          "gesture": "swipe",
+          "hold": 1.5,
+          "action": "enterDuel"
+        },
+        {
+          "type": "duel",
+          "show": "B03-DUEL",
+          "entryDissolve": 1.2,
+          "exitDissolve": 1.2,
+          "bestOf": 3
+        }
+      ],
+      "particlesMax": 3000,
+      "artSlotPrefix": "B03",
+      "note": "待机 294s（3×90+3×8）；对局 127s；题名石 4450—4850，交互只到 4800"
+    },
+    {
+      "id": "B04",
+      "name": "诗词飞花（含一期过渡）",
+      "area": "B",
+      "phase": 2,
+      "tier": "T2",
+      "surfaces": [
+        {
+          "canvas": "B-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 5800,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "B04-PERSON",
+      "interactions": [
+        {
+          "type": "h5",
+          "route": "/quiz",
+          "action": "dropChar",
+          "fallSeconds": 30,
+          "residualMax": 12
+        }
+      ],
+      "particlesMax": 0,
+      "artSlotPrefix": "B04",
+      "note": "一期过渡 120s 江岸·收束；二期答题 96 题 12 套×8；落字区 1600×600"
+    },
+    {
+      "id": "C01",
+      "name": "灵象积分赛",
+      "area": "C",
+      "phase": 1,
+      "tier": "T3",
+      "surfaces": [
+        {
+          "canvas": "C-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 4250,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "C01-GAME",
+      "interactions": [
+        {
+          "type": "gesture",
+          "sensor": "S1",
+          "zone": "C01",
+          "action": "driveElephant"
+        }
+      ],
+      "particlesMax": 12000,
+      "artSlotPrefix": "C01",
+      "note": "110s：待机10+对局90+结算10；底边压至 0.95m；中缝中性带 300"
+    },
+    {
+      "id": "C02",
+      "name": "山河体感三关",
+      "area": "C",
+      "phase": 1,
+      "tier": "T3",
+      "surfaces": [
+        {
+          "canvas": "C-SOUTH",
+          "rect": {
+            "x": 4250,
+            "y": 0,
+            "w": 4250,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "C02-GAME",
+      "interactions": [
+        {
+          "type": "gesture",
+          "sensor": "S2",
+          "zone": "C02",
+          "stages": [
+            "cloud",
+            "river",
+            "rain"
+          ]
+        }
+      ],
+      "particlesMax": 12000,
+      "artSlotPrefix": "C02",
+      "note": "5/40/40/30/5s；今日最佳 5s"
+    },
+    {
+      "id": "C03",
+      "name": "祈愿河灯",
+      "area": "C",
+      "phase": 1,
+      "tier": "T3",
+      "surfaces": [
+        {
+          "canvas": "C-EAST",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 5800,
+            "h": 3000
+          },
+          "z": 10
+        }
+      ],
+      "show": "C03-WISH",
+      "interactions": [
+        {
+          "type": "h5",
+          "route": "/lantern",
+          "maxConcurrent": 12,
+          "queue": true,
+          "wishMaxChars": 12,
+          "presets": [
+            "平安",
+            "学业",
+            "团圆",
+            "顺遂"
+          ],
+          "hourlyRelease": true
+        }
+      ],
+      "particlesMax": 3000,
+      "artSlotPrefix": "C03",
+      "note": "40s 四步；12 盏并发、第 13 排队；30min 集月；整点前 60s 准备"
+    },
+    {
+      "id": "C04",
+      "name": "千人共绘",
+      "area": "C",
+      "phase": 2,
+      "tier": "T3",
+      "surfaces": [
+        {
+          "canvas": "C-EAST",
+          "rect": {
+            "x": 0,
+            "y": 900,
+            "w": 5800,
+            "h": 2100
+          },
+          "z": 10
+        }
+      ],
+      "show": "C04-WINDOW",
+      "interactions": [
+        {
+          "type": "h5",
+          "route": "/draw",
+          "cells": {
+            "cols": 6,
+            "rows": 3,
+            "w": 800,
+            "h": 600
+          },
+          "dailyMax": 500,
+          "window": [
+            0,
+            720
+          ],
+          "period": 1800,
+          "collapseEvery": 300
+        }
+      ],
+      "particlesMax": 12000,
+      "artSlotPrefix": "C04",
+      "note": "窗口 12min/30min；18 格；每日 500 幅；水线带不切换"
+    },
+    {
+      "id": "C05",
+      "name": "文创取件",
+      "area": "C",
+      "phase": 2,
+      "tier": "T3",
+      "surfaces": [
+        {
+          "canvas": "C-EAST",
+          "rect": {
+            "x": 4900,
+            "y": 0,
+            "w": 900,
+            "h": 900
+          },
+          "z": 30
+        },
+        {
+          "canvas": "C-EAST",
+          "rect": {
+            "x": 2300,
+            "y": 1800,
+            "w": 1200,
+            "h": 900
+          },
+          "z": 25
+        }
+      ],
+      "show": "C05-ORDER",
+      "interactions": [
+        {
+          "type": "h5",
+          "route": "/pickup",
+          "patterns": [
+            "tuanshan",
+            "stone",
+            "elephant",
+            "river"
+          ],
+          "colors": [
+            "shilv",
+            "zhusha"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L"
+          ],
+          "sealHold": 60
+        }
+      ],
+      "particlesMax": 0,
+      "artSlotPrefix": "C05",
+      "note": "四步 60s；印章位三态常驻；4 类商品一一对应"
+    },
+    {
+      "id": "D01",
+      "name": "四季",
+      "area": "D",
+      "phase": 1,
+      "tier": "T4",
+      "surfaces": [
+        {
+          "canvas": "D-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-FLOOR",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 8000
+          },
+          "z": 5
+        }
+      ],
+      "show": "D-MASTER",
+      "interactions": [
+        {
+          "type": "floorStep",
+          "sensor": "IR",
+          "zones": [
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9"
+          ],
+          "response": 0.3,
+          "standRing": 3,
+          "ringRadius": 800
+        }
+      ],
+      "particlesMax": 6000,
+      "artSlotPrefix": "D01",
+      "note": "120s：30 慢推 / 30—90 春转夏 / 90—120 夏转秋+定格 10s"
+    },
+    {
+      "id": "D02",
+      "name": "花境",
+      "area": "D",
+      "phase": 1,
+      "tier": "T4",
+      "surfaces": [
+        {
+          "canvas": "D-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-FLOOR",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 8000
+          },
+          "z": 5
+        }
+      ],
+      "show": "D-MASTER",
+      "interactions": [
+        {
+          "type": "floorStep",
+          "sensor": "IR",
+          "zones": [
+            "F1",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F9"
+          ],
+          "spread": 600,
+          "jumpBurst": true,
+          "reform": 2
+        }
+      ],
+      "particlesMax": 12000,
+      "artSlotPrefix": "D02",
+      "note": "180s：40/80/40/20；花爆每 20s；中央 F2/F5/F8 只铺稀疏光点"
+    },
+    {
+      "id": "D03",
+      "name": "月升",
+      "area": "D",
+      "phase": 1,
+      "tier": "T4",
+      "surfaces": [
+        {
+          "canvas": "D-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-FLOOR",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 8000
+          },
+          "z": 5
+        }
+      ],
+      "show": "D-MASTER",
+      "interactions": [
+        {
+          "type": "floorStep",
+          "sensor": "IR",
+          "zones": [
+            "F4",
+            "F5",
+            "F6"
+          ],
+          "breakMoon": true,
+          "threeTogether": {
+            "hold": 0,
+            "riseFraction": 0.3333,
+            "window": 8
+          }
+        }
+      ],
+      "particlesMax": 4000,
+      "artSlotPrefix": "D03",
+      "note": "180s；满月 4200；亮度 60%；镜面再降 30—40%；静止 20s"
+    },
+    {
+      "id": "D04",
+      "name": "山生",
+      "area": "D",
+      "phase": 1,
+      "tier": "T4",
+      "surfaces": [
+        {
+          "canvas": "D-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-FLOOR",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 8000
+          },
+          "z": 5
+        }
+      ],
+      "show": "D-MASTER",
+      "interactions": [
+        {
+          "type": "floorSwipe",
+          "sensor": "IR",
+          "zones": [
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9"
+          ],
+          "lineLife": 10,
+          "budHeight": 400,
+          "allNine": "elephantFull"
+        }
+      ],
+      "particlesMax": 9000,
+      "artSlotPrefix": "D04",
+      "note": "180s：50/60/40/30；象高 2600、壁面 3600；水线 10s 合拢"
+    },
+    {
+      "id": "D05",
+      "name": "群蝶",
+      "area": "D",
+      "phase": 1,
+      "tier": "T4",
+      "surfaces": [
+        {
+          "canvas": "D-NORTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-SOUTH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 3000
+          },
+          "z": 10
+        },
+        {
+          "canvas": "D-FLOOR",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 13000,
+            "h": 8000
+          },
+          "z": 5
+        }
+      ],
+      "show": "D-MASTER",
+      "interactions": [
+        {
+          "type": "floorStep",
+          "sensor": "IR",
+          "zones": [
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9"
+          ],
+          "butterflies": [
+            3,
+            5
+          ],
+          "maxRings": 3,
+          "ringRadius": 1200
+        }
+      ],
+      "particlesMax": 15000,
+      "artSlotPrefix": "D05",
+      "note": "60s：20/30/8/2；蝶道 3000；15,000/屏；最多 3 环"
+    }
+  ]
+}

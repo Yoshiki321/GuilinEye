@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "note": "现场硬件端点；对应硬件表：ORBBEC Femto Bolt x3、北阳 10m 雷达 x2（TUIO）、红外 x4（TUIO）。现场只改本文件，不改代码。",
+  "radar": [
+    {
+      "enabled": true,
+      "sensorId": "R1",
+      "port": 3333,
+      "source": "R1",
+      "allowNoSource": true,
+      "idMin": -1,
+      "idMax": -1,
+      "fallbackMinX": 0.5,
+      "fallbackMaxX": 1.0,
+      "originX": 3400,
+      "originY": 0,
+      "spanX": 4600,
+      "spanY": 3000,
+      "flipX": false,
+      "flipY": true,
+      "defaultZone": "T8"
+    },
+    {
+      "enabled": true,
+      "sensorId": "R2",
+      "port": 3333,
+      "source": "R2",
+      "allowNoSource": true,
+      "idMin": -1,
+      "idMax": -1,
+      "fallbackMinX": 0.0,
+      "fallbackMaxX": 0.499,
+      "originX": 1200,
+      "originY": 0,
+      "spanX": 3600,
+      "spanY": 3000,
+      "flipX": false,
+      "flipY": true,
+      "defaultZone": "T7"
+    }
+  ],
+  "infrared": [
+    {
+      "enabled": true,
+      "sensorId": "IR",
+      "port": 3334,
+      "source": "IR",
+      "allowNoSource": true,
+      "defaultZone": "F5"
+    }
+  ],
+  "femto": [
+    {
+      "enabled": true,
+      "sensorId": "S1",
+      "serial": "",
+      "index": 0,
+      "zone": "C01",
+      "width": 640,
+      "height": 576,
+      "fps": 30,
+      "minDepthMm": 450,
+      "maxDepthMm": 6000,
+      "gesture": true,
+      "flipX": false
+    },
+    {
+      "enabled": true,
+      "sensorId": "S2",
+      "serial": "",
+      "index": 1,
+      "zone": "C02",
+      "width": 640,
+      "height": 576,
+      "fps": 30,
+      "minDepthMm": 450,
+      "maxDepthMm": 6000,
+      "gesture": true,
+      "flipX": false
+    },
+    {
+      "enabled": true,
+      "sensorId": "S3",
+      "serial": "",
+      "index": 2,
+      "zone": "S3-ENTRY",
+      "width": 640,
+      "height": 576,
+      "fps": 30,
+      "minDepthMm": 500,
+      "maxDepthMm": 6000,
+      "gesture": false,
+      "flipX": false
+    }
+  ]
+}

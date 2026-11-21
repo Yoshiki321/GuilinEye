@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e5">
+<title>祈愿河灯 · 桂林之眼</title>
+<link rel="stylesheet" href="../shared/ge.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="seal">灯</div><div><h1>祈愿河灯</h1><p>C-03 · 40 秒四步</p></div></div>
+    <nav class="nav"><a href="../">返回</a></nav>
+  </header>
+
+  <section class="panel">
+    <h2>写一句愿</h2>
+    <p class="sub">12 字以内。河灯自码头升起、漂向东侧；同屏最多 12 盏，第 13 盏起排队。</p>
+    <div class="chips" id="presets">
+      <button class="chip" data-text="平安">平安</button>
+      <button class="chip" data-text="学业">学业</button>
+      <button class="chip" data-text="团圆">团圆</button>
+      <button class="chip" data-text="顺遂">顺遂</button>
+    </div>
+    <div class="field">
+      <label>愿字 <span class="counter"><span id="count">0</span>/12</span></label>
+      <input class="input" id="wish" maxlength="12" placeholder="例如：家人平安，山水长在">
+      <div class="hint">现场只收愿字，不收姓名与联系方式。</div>
+    </div>
+    <button class="btn row" id="send">放一盏河灯</button>
+    <div class="result" id="result">
+      <div style="font-size:12px;color:rgba(23,33,30,.55)" id="statusLine">已放灯</div>
+      <div class="code" id="code">—</div>
+      <div class="note" id="note"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>灯河流向</h2>
+    <p class="sub">四步循环 40 秒；30 分钟集月，整点齐放。</p>
+    <div class="flow">
+      <div class="step on"><span class="n on">1</span><div><b>放灯</b> 自码头升起，灯光由暗到亮，约 8 秒。</div></div>
+      <div class="step"><span class="n">2</span><div><b>漂移</b> 顺水向东，灯影在水面拉长。</div></div>
+      <div class="step"><span class="n">3</span><div><b>集月</b> 河灯向月光聚拢，排成弧线。</div></div>
+      <div class="step"><span class="n">4</span><div><b>齐放</b> 整点同时升空，40 秒后回到起点。</div></div>
+    </div>
+    <div class="stats"><span>当前在河<b id="active">0</b></span><span>上限<b>12</b></span><span>今日<b id="total">0</b></span></div>
+  </section>
+
+  <p class="foot">接口：/api/v1/c03/blessings、/c03/state。正式上线需接入内容审核与敏感词过滤。</p>
+</div>
+<script src="../shared/ge.js"></script>
+<script src="lantern.js"></script>
+</body>
+</html>

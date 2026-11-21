@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e5">
+<title>诗词飞花 · 桂林之眼</title>
+<link rel="stylesheet" href="../shared/ge.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="seal">诗</div><div><h1>诗词飞花</h1><p>B-04 · 答题落字</p></div></div>
+    <nav class="nav"><a href="../">返回</a></nav>
+  </header>
+
+  <section class="panel">
+    <h2>先选一组</h2>
+    <p class="sub">题目按年龄分轨；答对即落字，连对两级升阶，连错两级降阶。题库为 12 条演示种子，正式 96 题待学科教师终审。</p>
+    <div class="chips" id="ages">
+      <button class="chip on" data-age="小学低年级">小学低年级</button>
+      <button class="chip" data-age="小学高年级">小学高年级</button>
+      <button class="chip" data-age="初中">初中</button>
+      <button class="chip" data-age="成人">成人</button>
+    </div>
+    <div class="field"><button class="btn row" id="start">开始答题</button></div>
+  </section>
+
+  <section class="panel" id="stage" style="display:none">
+    <div class="qhead"><span id="progress">第 1 题 / 共 10 题</span><span id="level">初阶 · L1</span></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="poem" id="prompt">—<small id="title"></small></div>
+    <div class="opts" id="opts"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="stats"><span>答对<b id="right">0</b></span><span>连对<b id="streak">0</b></span><span>落字<b id="drops">0</b></span></div>
+    <div class="field" style="margin-top:18px"><button class="btn row" id="next" style="display:none">下一题</button></div>
+    <div class="result" id="cert">
+      <h3 style="margin:0 0 8px;font-size:17px">免费电子证书</h3>
+      <p style="margin:0;font-size:12.5px;line-height:1.8;color:rgba(23,33,30,.6)">答对 3 题即可领取。19—29 元烫金证书请到厅外打印点线下办理，本页不收款。</p>
+      <div class="field"><button class="btn seal" id="claim">领取电子证书</button></div>
+      <div id="certOut" class="note"></div>
+    </div>
+  </section>
+
+  <p class="foot">落字规则：答对 → 该句关键字落到 B-04 墙面，30 秒风化；残影上限 12 个。接口：/api/v1/b04/*</p>
+</div>
+<script src="../shared/ge.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>

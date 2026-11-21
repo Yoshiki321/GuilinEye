@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e5">
+<title>千人共绘 · 桂林之眼</title>
+<link rel="stylesheet" href="../shared/ge.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="seal">绘</div><div><h1>千人共绘</h1><p>C-04 · 18 格长卷</p></div></div>
+    <nav class="nav"><a href="../">返回</a></nav>
+  </header>
+
+  <section class="panel">
+    <h2>画一笔山水</h2>
+    <p class="sub">每 30 分钟的前 12 分钟开放投墙；长卷 6×3 共 18 格，每格 800×600。每日上限 500 幅。</p>
+    <div class="paperbar" id="papers">
+      <button class="chip on" data-paper="宣纸">宣纸</button>
+      <button class="chip" data-paper="绢帛">绢帛</button>
+      <button class="chip" data-paper="自由">自由</button>
+    </div>
+    <canvas id="pad" width="640" height="480"></canvas>
+    <div class="tools">
+      <span id="colors" style="display:flex;gap:8px">
+        <span class="swatch on" data-color="#1b2320" style="background:#1b2320"></span>
+        <span class="swatch" data-color="#2f6f5e" style="background:#2f6f5e"></span>
+        <span class="swatch" data-color="#b23a2e" style="background:#b23a2e"></span>
+        <span class="swatch" data-color="#b08a2e" style="background:#b08a2e"></span>
+      </span>
+      <input id="size" type="range" min="2" max="24" value="6" style="width:120px">
+      <button class="btn ghost" id="clear" style="padding:9px 16px">清空</button>
+    </div>
+    <div class="field">
+      <label>落款（可留空）</label>
+      <input class="input" id="nickname" maxlength="12" placeholder="例如：象山下的阿桂">
+    </div>
+    <button class="btn row" id="submit">投进长卷</button>
+    <div class="result" id="result">
+      <div class="code" id="slot">第 1 格</div>
+      <div class="note" id="note"></div>
+    </div>
+  </section>
+
+  <p class="foot">画作仅用于馆内长卷展示；窗口关闭时按队列顺延。接口：/api/v1/c04/works。</p>
+</div>
+<script src="../shared/ge.js"></script>
+<script src="draw.js"></script>
+</body>
+</html>

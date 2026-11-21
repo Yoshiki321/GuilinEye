@@ -1,0 +1,442 @@
+{
+  "version": "1.1",
+  "note": "所有时间以秒计；④ 3s 交叉溶解包含在段时长内，720s 总长不变",
+  "shows": [
+    {
+      "id": "D-MASTER",
+      "name": "④ 沉浸大厅总轴",
+      "cycle": 720,
+      "crossfade": 3,
+      "segments": [
+        {
+          "id": "D01",
+          "name": "四季",
+          "start": 0,
+          "dur": 120
+        },
+        {
+          "id": "D02",
+          "name": "花境",
+          "start": 120,
+          "dur": 180
+        },
+        {
+          "id": "D03",
+          "name": "月升",
+          "start": 300,
+          "dur": 180
+        },
+        {
+          "id": "D04",
+          "name": "山生",
+          "start": 480,
+          "dur": 180
+        },
+        {
+          "id": "D05",
+          "name": "群蝶",
+          "start": 660,
+          "dur": 60
+        }
+      ]
+    },
+    {
+      "id": "A01-STAR",
+      "name": "石象八候",
+      "cycle": 720,
+      "segments": [
+        {
+          "id": "晴岚",
+          "start": 0,
+          "dur": 90
+        },
+        {
+          "id": "烟雨",
+          "start": 90,
+          "dur": 90
+        },
+        {
+          "id": "夕照",
+          "start": 180,
+          "dur": 90
+        },
+        {
+          "id": "薰风",
+          "start": 270,
+          "dur": 90
+        },
+        {
+          "id": "秋月",
+          "start": 360,
+          "dur": 90
+        },
+        {
+          "id": "云开",
+          "start": 450,
+          "dur": 90
+        },
+        {
+          "id": "冬雪",
+          "start": 540,
+          "dur": 90
+        },
+        {
+          "id": "晨雾",
+          "start": 630,
+          "dur": 90
+        }
+      ]
+    },
+    {
+      "id": "A03-LOOP",
+      "name": "古人招手",
+      "cycle": 60,
+      "action": 15,
+      "segments": [
+        {
+          "id": "作揖",
+          "start": 0,
+          "dur": 4
+        },
+        {
+          "id": "内指",
+          "start": 4,
+          "dur": 4
+        },
+        {
+          "id": "让路",
+          "start": 8,
+          "dur": 4
+        },
+        {
+          "id": "入洞",
+          "start": 12,
+          "dur": 3
+        }
+      ]
+    },
+    {
+      "id": "A04-LOOP",
+      "name": "古人入卷",
+      "cycle": 180,
+      "action": 20,
+      "segments": [
+        {
+          "id": "行走",
+          "start": 0,
+          "dur": 12
+        },
+        {
+          "id": "招手",
+          "start": 12,
+          "dur": 4
+        },
+        {
+          "id": "入壁",
+          "start": 16,
+          "dur": 4
+        }
+      ]
+    },
+    {
+      "id": "B01-LOOP",
+      "name": "喀斯特五幕",
+      "cycle": 180,
+      "segments": [
+        {
+          "id": "海底",
+          "start": 0,
+          "dur": 36
+        },
+        {
+          "id": "抬升",
+          "start": 36,
+          "dur": 36
+        },
+        {
+          "id": "溶蚀",
+          "start": 72,
+          "dur": 36
+        },
+        {
+          "id": "洞成",
+          "start": 108,
+          "dur": 36
+        },
+        {
+          "id": "今貌",
+          "start": 144,
+          "dur": 36
+        }
+      ]
+    },
+    {
+      "id": "B02-LOOP",
+      "name": "非遗市井",
+      "cycle": 240,
+      "segments": [
+        {
+          "id": "米粉",
+          "start": 0,
+          "dur": 40
+        },
+        {
+          "id": "桂剧",
+          "start": 40,
+          "dur": 40
+        },
+        {
+          "id": "团扇",
+          "start": 80,
+          "dur": 40
+        },
+        {
+          "id": "油茶",
+          "start": 120,
+          "dur": 50
+        },
+        {
+          "id": "天琴",
+          "start": 170,
+          "dur": 50
+        },
+        {
+          "id": "收束",
+          "start": 220,
+          "dur": 20
+        }
+      ]
+    },
+    {
+      "id": "B03-STANDBY",
+      "name": "石刻三幕",
+      "cycle": 294,
+      "intermission": 8,
+      "segments": [
+        {
+          "id": "洞名",
+          "start": 0,
+          "dur": 90
+        },
+        {
+          "id": "拓本1",
+          "start": 90,
+          "dur": 8
+        },
+        {
+          "id": "诗与月",
+          "start": 98,
+          "dur": 90
+        },
+        {
+          "id": "拓本2",
+          "start": 188,
+          "dur": 8
+        },
+        {
+          "id": "陆游",
+          "start": 196,
+          "dur": 90
+        },
+        {
+          "id": "拓本3",
+          "start": 286,
+          "dur": 8
+        }
+      ]
+    },
+    {
+      "id": "B03-DUEL",
+      "name": "笔墨官司一局",
+      "cycle": 127,
+      "segments": [
+        {
+          "id": "转场",
+          "start": 0,
+          "dur": 10
+        },
+        {
+          "id": "选字",
+          "start": 10,
+          "dur": 15
+        },
+        {
+          "id": "书写",
+          "start": 25,
+          "dur": 90
+        },
+        {
+          "id": "结算",
+          "start": 115,
+          "dur": 4
+        },
+        {
+          "id": "结局",
+          "start": 119,
+          "dur": 6
+        },
+        {
+          "id": "回落",
+          "start": 125,
+          "dur": 2
+        }
+      ]
+    },
+    {
+      "id": "B04-PERSON",
+      "name": "诗词飞花",
+      "cycle": 180,
+      "segments": [
+        {
+          "id": "扫码",
+          "start": 0,
+          "dur": 10
+        },
+        {
+          "id": "答题",
+          "start": 10,
+          "dur": 170
+        }
+      ]
+    },
+    {
+      "id": "C01-GAME",
+      "name": "灵象积分赛",
+      "cycle": 110,
+      "segments": [
+        {
+          "id": "待机",
+          "start": 0,
+          "dur": 10
+        },
+        {
+          "id": "对局",
+          "start": 10,
+          "dur": 90
+        },
+        {
+          "id": "结算",
+          "start": 100,
+          "dur": 10
+        }
+      ]
+    },
+    {
+      "id": "C02-GAME",
+      "name": "山河三关",
+      "cycle": 120,
+      "segments": [
+        {
+          "id": "提示",
+          "start": 0,
+          "dur": 5
+        },
+        {
+          "id": "拨云",
+          "start": 5,
+          "dur": 40
+        },
+        {
+          "id": "划江",
+          "start": 45,
+          "dur": 40
+        },
+        {
+          "id": "唤雨",
+          "start": 85,
+          "dur": 30
+        },
+        {
+          "id": "结算",
+          "start": 115,
+          "dur": 5
+        }
+      ]
+    },
+    {
+      "id": "C03-WISH",
+      "name": "祈愿河灯",
+      "cycle": 40,
+      "segments": [
+        {
+          "id": "灯现",
+          "start": 0,
+          "dur": 5
+        },
+        {
+          "id": "写愿",
+          "start": 5,
+          "dur": 15
+        },
+        {
+          "id": "升起",
+          "start": 20,
+          "dur": 8
+        },
+        {
+          "id": "汇入",
+          "start": 28,
+          "dur": 12
+        }
+      ]
+    },
+    {
+      "id": "C03-HOURLY",
+      "name": "整点齐放",
+      "cycle": 3600,
+      "atSecond": 0,
+      "sequence": [
+        {
+          "id": "准备",
+          "start": -60,
+          "dur": 60
+        },
+        {
+          "id": "齐放",
+          "start": 0,
+          "dur": 30
+        }
+      ]
+    },
+    {
+      "id": "C04-WINDOW",
+      "name": "千人共绘窗口",
+      "cycle": 1800,
+      "period": 1800,
+      "window": {
+        "start": 0,
+        "dur": 720
+      },
+      "collapseEvery": 300,
+      "collapseDur": 8,
+      "warnBeforeEnd": 120
+    },
+    {
+      "id": "C05-ORDER",
+      "name": "文创取件",
+      "cycle": 60,
+      "segments": [
+        {
+          "id": "选纹样",
+          "start": 0,
+          "dur": 15
+        },
+        {
+          "id": "选色号",
+          "start": 15,
+          "dur": 20
+        },
+        {
+          "id": "确认",
+          "start": 35,
+          "dur": 10
+        },
+        {
+          "id": "成印",
+          "start": 45,
+          "dur": 15
+        }
+      ]
+    }
+  ]
+}

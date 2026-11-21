@@ -1,0 +1,87 @@
+{
+  "version": "1.1",
+  "basis": "D-002 设备与算力基线",
+  "tiers": {
+    "T1": {
+      "area": "A",
+      "internal": [
+        2666,
+        1500
+      ],
+      "output": [
+        5333,
+        3000
+      ],
+      "fps": 30,
+      "particlesMax": 5000,
+      "post": "none",
+      "note": "P2000/16G，禁体积雾与全屏后期"
+    },
+    "T2": {
+      "area": "B",
+      "internal": [
+        2900,
+        1630
+      ],
+      "output": [
+        5800,
+        3260
+      ],
+      "fps": 30,
+      "particlesMax": 8000,
+      "post": "light",
+      "note": "P5000/32G，4 路 4K"
+    },
+    "T3": {
+      "area": "C",
+      "internal": [
+        3840,
+        2160
+      ],
+      "output": [
+        5800,
+        3260
+      ],
+      "fps": 60,
+      "particlesMax": 12000,
+      "post": "light",
+      "note": "RTX5070/32G，3 路"
+    },
+    "T4": {
+      "area": "D",
+      "internal": [
+        3840,
+        2160
+      ],
+      "output": [
+        5882,
+        3309
+      ],
+      "fps": 60,
+      "particlesMax": 15000,
+      "post": "medium",
+      "note": "5 台各 3 路；1920 方案 3 台各 5 路降 [2716,1528]/30fps"
+    }
+  },
+  "segmentParticleCaps": {
+    "D01": 6000,
+    "D02": 12000,
+    "D03": 4000,
+    "D04": 9000,
+    "D05": 15000
+  },
+  "brightness": {
+    "normal": 1.0,
+    "D03": 0.6,
+    "D05": 1.0,
+    "mirrorAttenuation": [
+      0.3,
+      0.4
+    ]
+  },
+  "response": {
+    "footRipple": 0.3,
+    "a03Greet": 0.5,
+    "radarHover": 0.8
+  }
+}
