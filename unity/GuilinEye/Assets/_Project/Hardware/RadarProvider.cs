@@ -133,7 +133,8 @@ namespace GuilinEye.Hardware
                     (c.X < _endpoint.fallbackMinX || c.X > _endpoint.fallbackMaxX)) return false;
                 return true;
             }
-            return string.Equals(c.Source, _endpoint.source, StringComparison.OrdinalIgnoreCase);
+            return string.Equals(c.Source, _endpoint.source, StringComparison.OrdinalIgnoreCase)
+                || c.Source.StartsWith(_endpoint.source + "@", StringComparison.OrdinalIgnoreCase);
         }
 
         float MapX(float nx)

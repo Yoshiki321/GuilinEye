@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "note": "现场硬件端点；对应硬件表：ORBBEC Femto Bolt x3、北阳 10m 雷达 x2（TUIO）、红外 x4（TUIO）。现场只改本文件，不改代码。",
+  "note": "现场硬件端点；对应 ORBBEC Femto Bolt x3（640x576 NFOV 有效 0.5-3.86m，超 3.86m 可改 320x288）、北阳 UST-10LX x2（TUIO）、红外 x4（TUIO）。现场只改本文件，不改代码。",
   "radar": [
     {
       "enabled": true,
@@ -46,7 +46,12 @@
       "port": 3334,
       "source": "IR",
       "allowNoSource": true,
-      "defaultZone": "F5"
+      "defaultZone": "F5",
+      "useGridZones": false,
+      "gridCols": 3,
+      "gridRows": 3,
+      "flipX": false,
+      "flipY": false
     }
   ],
   "femto": [
@@ -59,8 +64,8 @@
       "width": 640,
       "height": 576,
       "fps": 30,
-      "minDepthMm": 450,
-      "maxDepthMm": 6000,
+      "minDepthMm": 500,
+      "maxDepthMm": 3800,
       "gesture": true,
       "flipX": false
     },
@@ -73,8 +78,8 @@
       "width": 640,
       "height": 576,
       "fps": 30,
-      "minDepthMm": 450,
-      "maxDepthMm": 6000,
+      "minDepthMm": 500,
+      "maxDepthMm": 3800,
       "gesture": true,
       "flipX": false
     },
@@ -88,7 +93,7 @@
       "height": 576,
       "fps": 30,
       "minDepthMm": 500,
-      "maxDepthMm": 6000,
+      "maxDepthMm": 3800,
       "gesture": false,
       "flipX": false
     }

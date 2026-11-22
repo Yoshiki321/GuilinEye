@@ -65,7 +65,7 @@ namespace GuilinEye.Hardware
                 _active[key] = ep.sensorId;
                 _count = _active.Count;
             }
-            Emit("presence", ZoneOf(ep), key, _count);
+            Emit("presence", ZoneOf(ep, c), key, _count);
         }
 
         void OnCursorRemoved(TuioEndpoint ep, TuioCursor c)
@@ -78,7 +78,7 @@ namespace GuilinEye.Hardware
                 if (!_active.Remove(key)) return;
                 _count = _active.Count;
             }
-            Emit("leave", ZoneOf(ep), key, _count);
+            Emit("leave", ZoneOf(ep, c), key, _count);
         }
 
         static string KeyOf(TuioEndpoint ep, TuioCursor c)
@@ -87,8 +87,18 @@ namespace GuilinEye.Hardware
             return ep.sensorId + "@" + ep.port + ":" + source + ":" + c.Id;
         }
 
-        string ZoneOf(TuioEndpoint ep)
+        string ZoneOf(TuioEndpoint ep, TuioCursor c)
         {
+            if (ep != null && ep.useGridZones && c != null)
+            {
+                var cols = Mathf.Max(1, ep.gridCols);
+                var rows = Mathf.Max(1, ep.gridRows);
+                var nx = Mathf.Clamp01(ep.flipX ? 1f - c.X : c.X);
+                var ny = Mathf.Clamp01(ep.flipY ? 1f - c.Y : c.Y);
+                var col = Mathf.Min(cols - 1, (int)(nx * cols));
+                var row = Mathf.Min(rows - 1, (int)(ny * rows));
+                return "F" + (row * cols + col + 1);
+            }
             return string.IsNullOrEmpty(ep.defaultZone) ? "F5" : ep.defaultZone;
         }
 
@@ -96,7 +106,8 @@ namespace GuilinEye.Hardware
         {
             if (string.IsNullOrEmpty(ep.source)) return true;
             if (string.IsNullOrEmpty(c.Source)) return ep.allowNoSource;
-            return string.Equals(c.Source, ep.source, StringComparison.OrdinalIgnoreCase);
+            return string.Equals(c.Source, ep.source, StringComparison.OrdinalIgnoreCase)
+                || c.Source.StartsWith(ep.source + "@", StringComparison.OrdinalIgnoreCase);
         }
 
         void Emit(string type, string zone, string trackingId, int count)

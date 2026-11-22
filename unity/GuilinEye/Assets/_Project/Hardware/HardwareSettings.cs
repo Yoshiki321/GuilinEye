@@ -46,6 +46,11 @@ namespace GuilinEye.Hardware
         public bool flipY = true;
 
         public string defaultZone;
+
+        // 红外四台拼接输出统一 [0,1] 坐标时，置 true 自动映射到 F1—F9 网格；默认 false 走 defaultZone 兜底。
+        public bool useGridZones;
+        public int gridCols = 3;
+        public int gridRows = 3;
     }
 
     [Serializable]
@@ -59,8 +64,8 @@ namespace GuilinEye.Hardware
         public int width = 640;
         public int height = 576;
         public int fps = 30;
-        public int minDepthMm = 450;
-        public int maxDepthMm = 6000;
+        public int minDepthMm = 500;
+        public int maxDepthMm = 3800;
 
         // 现场未接骨骼 SDK 时，用深度帧质心的左右往复做“挥手”启发式；
         // 只用于 C01/C02 的触发，不冒充 32 关节骨架。
